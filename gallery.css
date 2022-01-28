@@ -20,7 +20,7 @@ span,
 label,
 input,
 textarea {
-  color: #fff;
+  color: var(--secondarytext);
 }
 
 h1 {
@@ -84,17 +84,65 @@ a {
   font-size: 24px;
 }
 
-#blog-section {
+#introduction-section {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "heading heading" "left-card right-card";
+  gap: 1em;
+}
+
+.left-card {
+  grid-area: left-card;
+}
+
+.right-card {
+  grid-area: right-card;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-card > img {
+  display: block;
+  margin: 10px auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--mainText);
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#preview {
+  height: auto;
+  width: 300px;
+  padding: 1em;
+  border: 1.5px solid black;
+}
+
+#gallery-section {
   margin-top: 2em;
   margin-bottom: 2em;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "heading heading heading heading" "left-column lc-column rc-column right-column";
+  grid-template-areas:
+    "heading heading heading heading"
+    "left-column lc-column rc-column right-column"
+    "lb-column lcb-column column column";
   gap: 1em;
 }
 
-#blog-section h2 {
-  color: var(--mainColor);
+#gallery-section h2 {
+  color: var(--secondaryColor);
 }
 
 .heading {
@@ -105,17 +153,10 @@ a {
   justify-content: center;
 }
 
-.details {
-  padding: 1em;
-  align-items: center;
-}
-
 .column {
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  background-color: var(--mainColor);
-  color: var(--secondaryColor);
 }
 
 .column:hover {
@@ -138,6 +179,14 @@ a {
   grid-area: right-column;
 }
 
+.lb-column {
+  grid-area: lb-column;
+}
+
+.lcb-column {
+  grid-area: lcb-column;
+}
+
 .column > img {
   width: 100%;
 }
@@ -147,21 +196,20 @@ button {
   background-color: transparent;
   border-radius: 50px;
   padding: 4px 10px;
-  border: 1px solid var(--secondaryColor);
+  border: 1px solid var(--mainText);
 }
 
 button a {
-  color: var(--secondaryColor);
+  color: var(--mainText);
 }
 
 #qoute-section {
   margin-top: 2em;
   margin-bottom: 2em;
   display: flex;
-  text-align: center;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: var(--secondaryColor);
 }
 
 #socials-container {
@@ -190,7 +238,7 @@ button a {
 }
 
 .footer {
-  background-color: var(--mainColor);
+  background-color: var(--secondaryColor);
 }
 
 #footer {
@@ -200,10 +248,6 @@ button a {
   padding: 1em;
 }
 
-.footer p {
-  color: var(--secondaryColor);
-}
-
 @media screen and (max-width: 1200px) {
   .main-container {
     width: 95%;
@@ -211,7 +255,16 @@ button a {
 }
 
 @media screen and (max-width: 800px) {
-  #blog-section h2 {
+  #introduction-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2em 20em;
+    grid-template-areas:
+      "heading"
+      "left-card"
+      "right-card";
+  }
+
+  #introduction-section h2 {
     font-size: 34px;
   }
 
@@ -220,8 +273,8 @@ button a {
     font-weight: 200;
   }
 
-  #blog-section {
+  #gallery-section {
     grid-template-columns: 1fr;
-    grid-template-areas: "heading" "left-column" "lc-column" "rc-column" "right-column";
+    grid-template-areas: "heading" "left-column" "center-column" "right-column";
   }
 }
