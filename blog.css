@@ -1,0 +1,168 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--primaryColor);
+  font-family: Arial, Helvetica, sans-serif;
+
+  --primaryColor: black;
+  --secondaryColor: yellow;
+  --borderColor: rgba(192, 192, 67, 0.877);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--secondaryColor);
+}
+
+h1 {
+  font-size: 56px;
+}
+h2 {
+  font-size: 48px;
+}
+h3 {
+  color: var(--primaryColor);
+  font-size: 42px;
+}
+h4 {
+  font-size: 24px;
+}
+h5 {
+  font-size: 26px;
+}
+h6 {
+  font-size: 26px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondaryColor);
+}
+
+p {
+  color: white;
+}
+
+section {
+  padding: 2em 100px;
+}
+
+.nav {
+  height: 40px;
+  display: flex;
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.links-container > a {
+  padding: 4px;
+  margin-right: 20px;
+}
+
+.links-container > a:hover {
+  color: #fff;
+}
+
+.s2 {
+  border-bottom: 1px solid var(--primaryColor);
+  background-color: var(--secondaryColor);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  grid-template-rows: 5em 20em;
+  grid-template-areas:
+    "header header"
+    "left-card right-card";
+}
+
+.heading {
+  grid-area: header;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s3 {
+  background-color: var(--secondaryColor);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 3em minmax(100px auto);
+  gap: 1em;
+  grid-template-areas:
+    "header header header header"
+    "left-column center-column column right-column";
+}
+
+.column {
+  background-color: var(--primaryColor);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 5px 5px 5px var(--borderColor);
+}
+
+.column > img {
+  width: 100%;
+}
+
+.left-column {
+  grid-area: left-column;
+}
+
+.center-column {
+  grid-area: center-column;
+}
+
+.right-column {
+  grid-area: right-column;
+}
+
+button {
+  margin-top: 2em;
+  background-color: var(--primaryColor);
+  border-radius: 50px;
+  padding: 4px 10px;
+  border: 1px solid var(--secondaryColor);
+}
+
+.details {
+  padding: 1em;
+  align-items: center;
+}
+
+.s4 {
+  background-color: var(--primaryColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.s5 {
+  background: repeating-linear-gradient(
+    35deg,
+    yellow 0px,
+    yellow 40px,
+    black 40px,
+    black 80px
+  );
+  height: 500px;
+}
+
+.footer {
+  background-color: var(--primaryColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer > p {
+  color: var(--secondaryColor);
+}
