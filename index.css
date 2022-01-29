@@ -73,16 +73,59 @@ a {
   width: 1200px;
   margin: 0 auto;
 }
-
+/*                            header                     hewofvojvff*/
 #nav-bar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  color: var(--secondaryColor);
+  align-items: center;
 }
 
 .links-container {
-  font-size: 24px;
+  display: flex;
+  text-transform: uppercase;
 }
+
+.links-container a {
+  display: inline-block;
+  padding: 15px;
+  font-size: 1rem;
+}
+
+.openMenu {
+  font-size: 2rem;
+  margin: 20px;
+  display: none;
+  cursor: pointer;
+}
+
+.closeMenu,
+.icons i {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.fa-facebook:hover {
+  color: #fff;
+}
+.fa-instagram:hover {
+  color: #fff;
+}
+.fa-twitter:hover {
+  color: #fff;
+}
+.fa-github:hover {
+  color: #fff;
+}
+
+.logo {
+  margin: 6px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/*                            header                     hewofvojvff*/
 
 #introduction-section {
   margin-top: 2em;
@@ -246,6 +289,39 @@ button a {
 }
 
 @media screen and (max-width: 800px) {
+  .links-container {
+    height: 50vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainColor);
+    transition: top 1s ease;
+    display: none;
+  }
+  .links-container .closeMenu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .openMenu {
+    display: block;
+  }
+  .links-container a:hover {
+    background: none;
+    color: var(--secondaryColor);
+    font-size: 1.1rem;
+  }
+  .icons i {
+    display: inline-block;
+    padding: 12px;
+  }
+
   #introduction-section {
     grid-template-columns: 1fr;
     grid-template-rows: 2em 20em;
