@@ -247,17 +247,31 @@ button a {
 }
 
 #socials-container {
-  background: repeating-linear-gradient(
-    35deg,
-    yellow 0px,
-    yellow 40px,
-    black 40px,
-    black 80px
-  );
   height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#socials-container>i{
+  color: var(--secondaryColor);
+  margin-right: 20px;
+}
+
+#socials-container>i.fa-facebook:hover{
+  color: blue;
+}
+
+#socials-container>i.fa-instagram:hover{
+  color: purple;
+}
+
+#socials-container>i.fa-twitter:hover{
+  color: aqua;
+}
+
+#socials-container>i.fa-github:hover{
+  color: white;
 }
 
 .warning {
